@@ -1,0 +1,22 @@
+{
+  "name": "multivariate-polynomial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "MultivariatePolymonial.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darshit-shah/multivariate-polynomial.git"
+  },
+  "dependencies": {
+    "numericjs": "*"
+  },
+  "author": "darshit@byteprophecy.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/darshit-shah/multivariate-polynomial/issues"
+  },
+  "homepage": "https://github.com/darshit-shah/multivariate-polynomial#readme"
+}
