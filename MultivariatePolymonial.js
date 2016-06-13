@@ -1,7 +1,7 @@
 (function (exports) {
     // JScript source code
     "use strict";
-    var numeric = require('numeric-1.2.6.js');
+    var numeric = require('numericjs');
 
     exports.MPoly = {
         Inverse: function (x) {
