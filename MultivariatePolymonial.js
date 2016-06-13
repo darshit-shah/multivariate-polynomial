@@ -101,19 +101,10 @@
             return { degree: degree, power: otherDataPower, beta: storage.Beta, profile: storage.profile, data: storage };
             //        }
         },
-        AnomayDetection: function(predict, otherData, degree, useFirstNPoints){
+        AnomalyDetection: function(predict, otherData, degree, useFirstNPoints){
         	var AnomalyData=[];
         	var localPredict=[];
         	var localOtherData=new Array(otherData.length);
-        	/*for(var i=0;i<useFirstNPoints;i++){
-        		localPredict.push(predict[i]);
-        		for (var j = 0; j < otherData.length; j++) {
-        			if(localOtherData[j]==null){
-        				localOtherData[j] = [];
-        			}
-        			localOtherData[j].push(otherData[j][i]);
-        		}
-        	}*/
         	for(var i=0;i<predict.length;i++){
         		if(i>=useFirstNPoints){
         			var orgReg = this.Regression(localPredict, localOtherData, degree);
@@ -262,8 +253,9 @@
             return values;
         }
     }
-
-
+		
+		/*
+		Example 1
     var _degree = 2;
 
     var volumes = [80.4166666666666, 105.779761904761, 116.680952380952, 126.268253968253, 127.449801587301, 146.407738095238, 150.133928571428, 155.717261904761, 150.681547619047, 137.8125, 119.47619047619, 97.5178571428571, 89.1916666666666, 86.6535714285714, 69.8619047619047, 71.1714285714285, 75.43];
@@ -271,9 +263,12 @@
     var margins = [0.666667500000016, 0.333333750000008, -0.541667083333322, -1.06944529761904, -2.04166738095237, -0.56349208333332, -0.862103035714274, 0.683035714285722, -0.634424761904767, -1.44692476190476, -2.66269857142858, -1.72619047619048, -0.441468255357146, -0.274801588690479, -1.18452380535715, -1.62400793095239, -1.81448412142858];
     var ts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
 
-		var anomalyData = exports.MPoly.AnomayDetection(volumes, [ts, prices, margins], _degree, 10);
+		var anomalyData = exports.MPoly.AnomalyDetection(volumes, [ts, prices, margins], _degree, 10);
 		console.log(anomalyData);
+		*/
+		
 		/*
+		Example 2
     var equation = exports.MPoly.MultivariateRegression(volumes, [ts, prices, margins], _degree, false);
     console.log(equation.profile)
     for (var i = 0; i < volumes.length; i++) {
